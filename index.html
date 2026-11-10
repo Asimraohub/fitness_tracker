@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitTrack Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-[#101210] text-white min-h-screen">
+  <div class="max-w-7xl mx-auto md:flex min-h-screen">
+    <aside class="bg-[#1C211C] md:w-60 p-6 md:min-h-screen">
+      <h1 class="text-2xl font-black text-[#B7F34A]">⚡ FitTrack</h1>
+      <p class="text-gray-400 text-sm mt-1">Your fitness companion</p>
+      <nav class="flex md:flex-col flex-wrap gap-3 mt-8 text-sm">
+        <a href="#dashboard" class="rounded-xl bg-[#B7F34A] text-black font-semibold px-4 py-3">Dashboard</a>
+        <a href="#goals" class="rounded-xl hover:bg-[#303830] px-4 py-3">Goals</a>
+        <a href="#workouts" class="rounded-xl hover:bg-[#303830] px-4 py-3">Workouts</a>
+        <a href="#activity" class="rounded-xl hover:bg-[#303830] px-4 py-3">Activity</a>
+      </nav>
+    </aside>
+    <main class="flex-1 p-5 md:p-9" id="dashboard">
+      <header class="flex flex-wrap justify-between items-center gap-3 mb-8">
+        <div><p class="text-gray-400 text-sm">Welcome back 👋</p><h2 class="text-3xl font-bold">Fitness Dashboard</h2></div>
+        <span class="bg-[#1C211C] rounded-full px-4 py-2 text-sm" id="today"></span>
+      </header>
+      <section class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mb-9">
+        <article class="bg-[#1C211C] rounded-2xl p-5"><p class="text-gray-400">👟 Steps</p><p id="steps" class="text-3xl font-bold mt-3">6,400</p><p class="text-[#B7F34A] text-sm mt-2">Goal: 10,000</p></article>
+        <article class="bg-[#1C211C] rounded-2xl p-5"><p class="text-gray-400">🔥 Calories</p><p class="text-3xl font-bold mt-3">420 <span class="text-base text-gray-400">kcal</span></p><p class="text-[#B7F34A] text-sm mt-2">Burned today</p></article>
+        <article class="bg-[#1C211C] rounded-2xl p-5"><p class="text-gray-400">💧 Water</p><p id="water" class="text-3xl font-bold mt-3">1,250 ml</p><p class="text-[#B7F34A] text-sm mt-2">Goal: 2,500 ml</p></article>
+        <article class="bg-[#1C211C] rounded-2xl p-5"><p class="text-gray-400">⏱ Workout</p><p class="text-3xl font-bold mt-3">35 <span class="text-base text-gray-400">min</span></p><p class="text-[#B7F34A] text-sm mt-2">Today's activity</p></article>
+      </section>
+      <section id="goals" class="bg-[#1C211C] rounded-2xl p-6 mb-7">
+        <h3 class="text-xl font-bold mb-5">Daily Goals</h3>
+        <div class="space-y-5">
+          <div><div class="flex justify-between mb-2"><span>Steps</span><span id="stepsPercent">64%</span></div><div class="h-3 rounded-full bg-[#333B33] overflow-hidden"><div id="stepsBar" class="h-full bg-[#B7F34A] rounded-full" style="width:64%"></div></div></div>
+          <div><div class="flex justify-between mb-2"><span>Water</span><span id="waterPercent">50%</span></div><div class="h-3 rounded-full bg-[#333B33] overflow-hidden"><div id="waterBar" class="h-full bg-sky-400 rounded-full" style="width:50%"></div></div></div>
+        </div>
+        <div class="flex flex-wrap gap-3 mt-6"><button id="addSteps" class="bg-[#B7F34A] hover:bg-lime-300 text-black font-bold px-5 py-3 rounded-xl cursor-pointer">+ 500 Steps</button><button id="addWater" class="bg-sky-500 hover:bg-sky-400 font-bold px-5 py-3 rounded-xl cursor-pointer">+ 250 ml Water</button><button id="reset" class="bg-[#333B33] hover:bg-[#465046] px-5 py-3 rounded-xl cursor-pointer">Reset demo</button></div>
+      </section>
+      <section id="activity" class="bg-[#1C211C] rounded-2xl p-6 mb-7">
+        <h3 class="text-xl font-bold mb-5">Weekly Activity</h3>
+        <div class="h-48 flex items-end justify-between gap-3 border-b border-[#414841] pb-2">
+          <div class="bg-[#B7F34A] rounded-t-lg flex-1" style="height:45%"></div><div class="bg-[#B7F34A] rounded-t-lg flex-1" style="height:65%"></div><div class="bg-[#B7F34A] rounded-t-lg flex-1" style="height:52%"></div><div class="bg-[#B7F34A] rounded-t-lg flex-1" style="height:85%"></div><div class="bg-[#B7F34A] rounded-t-lg flex-1" style="height:72%"></div><div class="bg-[#B7F34A] rounded-t-lg flex-1" style="height:95%"></div><div class="bg-[#B7F34A] rounded-t-lg flex-1" style="height:64%"></div>
+        </div>
+        <div class="flex justify-between gap-3 text-xs text-gray-400 mt-3 text-center"><span class="flex-1">Mon</span><span class="flex-1">Tue</span><span class="flex-1">Wed</span><span class="flex-1">Thu</span><span class="flex-1">Fri</span><span class="flex-1">Sat</span><span class="flex-1">Sun</span></div>
+        <p class="text-xs text-gray-500 mt-4">Illustrative activity data for the demo.</p>
+      </section>
+      <section id="workouts"><h3 class="text-xl font-bold mb-5">Recommended Workouts</h3><div class="grid sm:grid-cols-3 gap-4"><div class="bg-[#1C211C] rounded-2xl p-5"><div class="text-4xl mb-3">🚶</div><h4 class="font-bold">Walking</h4><p class="text-gray-400 text-sm mt-2">20 minutes · Easy</p></div><div class="bg-[#1C211C] rounded-2xl p-5"><div class="text-4xl mb-3">🏃</div><h4 class="font-bold">Running</h4><p class="text-gray-400 text-sm mt-2">30 minutes · Medium</p></div><div class="bg-[#1C211C] rounded-2xl p-5"><div class="text-4xl mb-3">🚴</div><h4 class="font-bold">Cycling</h4><p class="text-gray-400 text-sm mt-2">45 minutes · Medium</p></div></div></section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
